@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  overflow-x: hidden; // hides horizonal scroll on smaller screens
+  overflow-x: hidden;
 }
 
 * {
