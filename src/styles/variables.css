@@ -1,9 +1,6 @@
 :root {
-  /* Breakpoints */
-  --breakpoint-tablet: 800px;
-  --breakpoint-desktop: 1300px;
-
   /* Colors */
+
   --background-input: #f1f3f5;
   --background-main: #ffffff;
   --background-nav-item-hover: rgb(241, 243, 245);
@@ -17,6 +14,7 @@
   /* Spacing */
 
   /* Typography */
+
   --font-primary: Inter, sans-serif;
   --text-small: 13.125px;
   --text-md: 15px;
