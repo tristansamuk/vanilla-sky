@@ -46,4 +46,4 @@ src/
 
 ## Approach to Building Components
 
-Components are created using object-oriented programming principles.
+Components are created using object-oriented programming principles ...
