@@ -1,4 +1,33 @@
 .nav {
   display: flex;
-  font-family: var(--font-primary);
+}
+.nav__list {
+  display: flex;
+}
+.nav__item {
+  display: flex;
+}
+
+@media (min-width: 800px) {
+  .nav {
+    display: flex;
+  }
+  .nav__list {
+    display: flex;
+  }
+  .nav__item {
+    display: flex;
+  }
+}
+
+@media (min-width: 1300px) {
+  .nav {
+    display: flex;
+  }
+  .nav__list {
+    display: flex;
+  }
+  .nav__item {
+    display: flex;
+  }
 }
