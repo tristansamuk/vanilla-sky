@@ -1,3 +1,3 @@
-import { Navigation } from './components/navigation/navigation';
+import { NavigationDesktop } from './components/navigation/navigation';
 
-new Navigation();
+new NavigationDesktop();

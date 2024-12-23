@@ -19,13 +19,13 @@ export const inputs = {
 };
 
 export const navigationMain = {
+  home: 'Home',
+  search: 'Search',
+  notifications: 'Notifications',
   chat: 'Chat',
   feeds: 'Feeds',
-  home: 'Home',
   lists: 'Lists',
-  notifications: 'Notifications',
   profile: 'Profile',
-  search: 'Search',
   settings: 'Settings',
 };
 
