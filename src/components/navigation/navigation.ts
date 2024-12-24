@@ -1,5 +1,5 @@
 import './navigation.css';
-import { navigationMain } from '../../constants/ui-strings';
+import { buttons, navigationMain } from '../../constants/ui-strings';
 import { SVGComponent } from '../svg-component/svg-component';
 import {
   chat,
@@ -7,9 +7,12 @@ import {
   home,
   lists,
   notifications,
+  newPost,
   profile,
   search,
   settings,
+  newPostSVG,
+  defaultSVGAttributes,
 } from '../../constants/svgs';
 
 export class Navigation {
@@ -19,43 +22,52 @@ export class Navigation {
   private ulEl: HTMLUListElement;
   private listItemEl: HTMLLIElement;
   private paragraphEl: HTMLParagraphElement;
+  private buttonEl: HTMLButtonElement;
 
   constructor(templateElId = 'nav-template', hostElId = 'app') {
+    this.hostEl = document.getElementById(hostElId) as HTMLDivElement;
+
     this.templateEl = document.getElementById(
       templateElId
     ) as HTMLTemplateElement;
-    this.hostEl = document.getElementById(hostElId) as HTMLDivElement;
     const templateContent = document.importNode(this.templateEl.content, true);
-
-    this.navEl = templateContent.querySelector('.nav') as HTMLElement;
-
-    this.ulEl = templateContent.querySelector('.nav__list') as HTMLUListElement;
-
-    this.listItemEl = templateContent.querySelector(
-      '.nav__item'
-    ) as HTMLLIElement;
-
+    this.navEl = templateContent.querySelector('nav') as HTMLElement;
+    this.ulEl = templateContent.querySelector('ul') as HTMLUListElement;
+    this.listItemEl = templateContent.querySelector('li') as HTMLLIElement;
     this.paragraphEl = templateContent.querySelector(
-      '.nav__text'
+      'p'
     ) as HTMLParagraphElement;
+    this.buttonEl = templateContent.querySelector(
+      'button'
+    ) as HTMLButtonElement;
 
-    this.render();
+    this.renderNav();
     this.attachIcons();
+    this.formatButton();
   }
 
   private attachIcons() {
     // TODO: refactor to make dynamic and put inside render() method
-    new SVGComponent(home, `.nav__icon--home`);
-    new SVGComponent(search, `.nav__icon--search`);
-    new SVGComponent(notifications, `.nav__icon--notifications`);
-    new SVGComponent(chat, `.nav__icon--chat`);
-    new SVGComponent(feeds, `.nav__icon--feeds`);
-    new SVGComponent(lists, `.nav__icon--lists`);
-    new SVGComponent(profile, `.nav__icon--profile`);
-    new SVGComponent(settings, `.nav__icon--settings`);
+    new SVGComponent(home, defaultSVGAttributes, `.nav__icon--home`);
+    new SVGComponent(search, defaultSVGAttributes, `.nav__icon--search`);
+    new SVGComponent(
+      notifications,
+      defaultSVGAttributes,
+      `.nav__icon--notifications`
+    );
+    new SVGComponent(chat, defaultSVGAttributes, `.nav__icon--chat`);
+    new SVGComponent(feeds, defaultSVGAttributes, `.nav__icon--feeds`);
+    new SVGComponent(lists, defaultSVGAttributes, `.nav__icon--lists`);
+    new SVGComponent(profile, defaultSVGAttributes, `.nav__icon--profile`);
+    new SVGComponent(settings, defaultSVGAttributes, `.nav__icon--settings`);
   }
 
-  private render() {
+  private formatButton() {
+    this.buttonEl.innerText = buttons.newPost;
+    new SVGComponent(newPost, newPostSVG, 'button');
+  }
+
+  private renderNav() {
     this.ulEl.innerHTML = '';
     this.listItemEl.innerHTML = '';
 

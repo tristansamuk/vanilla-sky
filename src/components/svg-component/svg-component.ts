@@ -19,16 +19,21 @@ export class SVGComponent {
   private hostEl: HTMLElement;
   private svgEl: SVGElement;
   private pathEl: SVGPathElement;
-  private svgAttributes = defaultSVGAttributes;
+  private svgAttributes: SVGAttributes;
   private pathAttributes: PathAttributes;
   private hostClassName: string;
 
-  constructor(pathParams: PathAttributes, className: string) {
+  constructor(
+    pathParams: PathAttributes,
+    svgParams = defaultSVGAttributes,
+    className: string
+  ) {
     this.hostClassName = className;
     this.hostEl = document.querySelector(this.hostClassName) as HTMLElement;
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.pathAttributes = pathParams;
+    this.svgAttributes = svgParams;
     this.hostClassName = className;
 
     this.svgEl = templateContent.querySelector('svg') as SVGElement;

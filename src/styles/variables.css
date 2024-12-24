@@ -10,9 +10,11 @@
   --text-primary: #0b0f11;
   --text-secondary: #42576c;
   --text-tertiary: #6f969f;
+  --text-light: #ffffff;
 
   /* Measurements */
   --border-radius-sm: 8px;
+  --border-radius-xl: 999px;
 
   /* Spacing */
 
@@ -28,5 +30,6 @@
   --text-md: 15px;
   --text-lg: 18.75px;
   --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
   --font-weight-bold: 800;
 }
