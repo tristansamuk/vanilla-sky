@@ -2,21 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./src/styles/global.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Sky</title>
   </head>
   <script type="module" src="/src/app.ts" defer></script>
 
-  <template id="nav-desktop-template">
-    <nav class="nav-desktop">
-      <ul class="nav-desktop__list">
-        <li class="nav-desktop__item"></li>
+  <template id="nav-mobile-template">
+    <nav class="nav-mobile">
+      <ul class="nav-mobile__list">
+        <li class="nav-mobile__item"></li>
       </ul>
     </nav>
   </template>
 
+  <template id="nav-desktop-template">
+    <nav class="nav-desktop">
+      <ul class="nav-desktop__list">
+        <li class="nav-desktop__item">
+          <p class="nav-desktop__text"></p>
+        </li>
+      </ul>
+    </nav>
+  </template>
+
+  <template id="svg-template">
+    <svg>
+      <path></path>
+    </svg>
+  </template>
+
   <body>
-    <div id="app"></div>
+    <main id="root">
+      <div id="app"></div>
+    </main>
   </body>
 </html>

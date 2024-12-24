@@ -12,4 +12,21 @@ body {
   font-family: var(--font-primary);
   font-size: var(--text-md);
   font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  max-width: 1440px;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

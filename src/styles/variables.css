@@ -3,15 +3,20 @@
 
   --background-input: #f1f3f5;
   --background-main: #ffffff;
-  --background-nav-item-hover: rgb(241, 243, 245);
   --border: rgb(212, 219, 226);
   --brand-blue: rgb(0, 133, 255);
+  --hover-light: rgb(241, 243, 245);
   --text-highlight: #1083fe;
   --text-primary: #0b0f11;
   --text-secondary: #42576c;
   --text-tertiary: #6f969f;
 
+  /* Measurements */
+  --border-radius-sm: 8px;
+
   /* Spacing */
+
+  --padding-12: 12px;
 
   /* Typography */
 
@@ -20,5 +25,5 @@
   --text-md: 15px;
   --text-lg: 18.75px;
   --font-weight-regular: 400;
-  --font-weight-bold: 700;
+  --font-weight-bold: 800;
 }
