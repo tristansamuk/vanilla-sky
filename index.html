@@ -8,6 +8,14 @@
   </head>
   <script type="module" src="/src/app.ts" defer></script>
 
+  <template id="page-layout-template">
+    <div class="page-layout">
+      <div class="page-layout__nav"></div>
+      <div class="page-layout__feed"></div>
+      <div class="page-layout__search"></div>
+    </div>
+  </template>
+
   <template id="nav-template">
     <nav class="nav">
       <ul class="nav__list">
@@ -28,8 +36,6 @@
   </template>
 
   <body>
-    <main id="root">
-      <div id="app"></div>
-    </main>
+    <div id="app"></div>
   </body>
 </html>
