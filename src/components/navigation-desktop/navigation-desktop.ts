@@ -9,25 +9,23 @@ export class NavigationDesktop {
   private listItemEl: HTMLLIElement;
   private paragraphEl: HTMLParagraphElement;
 
-  constructor(templateElId = 'nav-desktop-template', hostElId = 'app') {
+  constructor(templateElId = 'nav-template', hostElId = 'app') {
     this.templateEl = document.getElementById(
       templateElId
     ) as HTMLTemplateElement;
     this.hostEl = document.getElementById(hostElId) as HTMLDivElement;
     const templateContent = document.importNode(this.templateEl.content, true);
 
-    this.navEl = templateContent.querySelector('.nav-desktop') as HTMLElement;
+    this.navEl = templateContent.querySelector('.nav') as HTMLElement;
 
-    this.ulEl = templateContent.querySelector(
-      '.nav-desktop__list'
-    ) as HTMLUListElement;
+    this.ulEl = templateContent.querySelector('.nav__list') as HTMLUListElement;
 
     this.listItemEl = templateContent.querySelector(
-      '.nav-desktop__item'
+      '.nav__item'
     ) as HTMLLIElement;
 
     this.paragraphEl = templateContent.querySelector(
-      '.nav-desktop__text'
+      '.nav__text'
     ) as HTMLParagraphElement;
 
     this.render();
@@ -39,7 +37,7 @@ export class NavigationDesktop {
 
     Object.entries(navigationMain).forEach(([key, value]) => {
       // Add a class that SVGComponent can use to attach the <svg> icon to the DOM.
-      const iconClass = `icon__${key}`;
+      const iconClass = `nav__icon--${key}`;
       this.listItemEl.classList.add(iconClass);
 
       // Copy the <li> and <p>, and set text content

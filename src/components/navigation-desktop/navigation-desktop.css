@@ -1,13 +1,13 @@
 @media (min-width: 800px) {
-  .nav-desktop {
+  .nav {
     display: flex;
   }
-  .nav-desktop__list {
+  .nav__list {
     display: flex;
     flex-direction: column;
     justify-content: left;
   }
-  .nav-desktop__item {
+  .nav__item {
     display: flex;
     gap: var(--spacing-2);
     justify-content: left;
@@ -19,23 +19,23 @@
     transition: all 100ms;
   }
 
-  .nav-desktop__item:first-of-type {
+  .nav__item:first-of-type {
     font-weight: var(--font-weight-bold);
   }
 
-  .nav-desktop__item:hover {
+  .nav__item:hover {
     background-color: var(--hover-light);
   }
 }
 
 /* @media (min-width: 1300px) {
-  .nav-desktop {
+  .nav {
     display
   }
-  .nav-desktop__list {
+  .nav__list {
     display: flex;
   }
-  .nav-desktop__item {
+  .nav__item {
     display: flex;
   }
 } */

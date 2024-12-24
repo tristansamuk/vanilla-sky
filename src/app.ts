@@ -5,5 +5,5 @@ import { home, search } from './constants/svgs';
 // Render Desktop Navigation
 
 new NavigationDesktop();
-new SVGComponent(home, `.icon__home`);
-new SVGComponent(search, `.icon__search`);
+new SVGComponent(home, `.nav__icon--home`);
+new SVGComponent(search, `.nav__icon--search`);
