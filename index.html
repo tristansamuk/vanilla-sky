@@ -2,11 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/styles/global.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Sky</title>
   </head>
   <script type="module" src="/src/app.ts" defer></script>
+
+  <template id="page-layout-template">
+    <div class="page-layout">
+      <div class="page-layout__nav"></div>
+      <div class="page-layout__feed"></div>
+      <div class="page-layout__search"></div>
+    </div>
+  </template>
+
+  <template id="nav-template">
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <p class="nav__text"></p>
+        </li>
+      </ul>
+      <div class="nav__button-container">
+        <button class="nav__button"></button>
+      </div>
+    </nav>
+  </template>
+
+  <template id="svg-template">
+    <svg>
+      <path></path>
+    </svg>
+  </template>
+
   <body>
     <div id="app"></div>
   </body>
