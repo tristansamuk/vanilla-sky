@@ -1,7 +1,3 @@
-.nav-svg--home {
-  border: 1px solid black;
-}
-
 @media (min-width: 800px) {
   .nav-desktop {
     display: flex;
@@ -13,12 +9,13 @@
   }
   .nav-desktop__item {
     display: flex;
+    gap: var(--spacing-2);
     justify-content: left;
     align-items: center;
     height: 3rem;
     font-size: var(--text-lg);
     border-radius: var(--border-radius-sm);
-    padding: var(--padding-12);
+    padding: var(--spacing-3);
     transition: all 100ms;
   }
 

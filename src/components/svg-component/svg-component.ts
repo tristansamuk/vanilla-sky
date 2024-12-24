@@ -1,4 +1,5 @@
 import {
+  defaultSVGAttributes,
   PathAttributeNames,
   PathAttributes,
   SvgAttributeNames,
@@ -7,10 +8,6 @@ import {
 
 /**
  * A reusable SVG component.
- * @constructor Takes three params
- * @param svgAttributes An object with the attributes to be set on the <svg> element
- * @param pathAttribute An object with the attributes to be set on the <path> element
- * @param hostClassName A string containing the class name of the html element that will hold the <SVG>
  */
 
 export class SVGComponent {
@@ -20,20 +17,15 @@ export class SVGComponent {
   private hostEl: HTMLElement;
   private svgEl: SVGElement;
   private pathEl: SVGPathElement;
-  private svgAttributes: SVGAttributes;
+  private svgAttributes = defaultSVGAttributes;
   private pathAttributes: PathAttributes;
   private hostClassName: string;
 
-  constructor(
-    svgParams: SVGAttributes,
-    pathParams: PathAttributes,
-    className: string
-  ) {
+  constructor(pathParams: PathAttributes, className: string) {
     this.hostClassName = className;
     this.hostEl = document.querySelector(this.hostClassName) as HTMLElement;
     const templateContent = document.importNode(this.templateEl.content, true);
 
-    this.svgAttributes = svgParams;
     this.pathAttributes = pathParams;
     this.hostClassName = className;
 

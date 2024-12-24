@@ -37,14 +37,22 @@ export class NavigationDesktop {
     this.ulEl.innerHTML = '';
     this.listItemEl.innerHTML = '';
 
-    Object.entries(navigationMain).forEach(([_key, value]) => {
-      const navItem = this.listItemEl.cloneNode(true);
-      const navItemText = this.paragraphEl.cloneNode(true);
-      navItemText.textContent = value;
+    Object.entries(navigationMain).forEach(([key, value]) => {
+      // Add a class that SVGComponent can use to attach the <svg> icon to the DOM.
+      const iconClass = `icon__${key}`;
+      this.listItemEl.classList.add(iconClass);
 
-      navItem.appendChild(navItemText);
+      // Copy the <li> and <p>, and set text content
+      const navListItem = this.listItemEl.cloneNode(true);
+      const navItemParagraph = this.paragraphEl.cloneNode(true);
+      navItemParagraph.textContent = value;
 
-      this.ulEl.appendChild(navItem);
+      // Attach the <p> to the <li>, and the <li> to the <ul>
+      navListItem.appendChild(navItemParagraph);
+      this.ulEl.appendChild(navListItem);
+
+      // Remove the class from the original element
+      this.listItemEl.classList.remove(iconClass);
     });
 
     this.hostEl.appendChild(this.navEl);
