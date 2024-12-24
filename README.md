@@ -4,7 +4,7 @@ A clone of Bluesky using only TypeScript, CSS, and HTML.
 
 Other than Vite for building and testing, no libraries or frameworks are used in this app.
 
-While I did use ChatGPT to help with code review and suggestions for improvement, none of the code in this repo is AI generated. I tried treat ChatGPT the same way I would a senior developer: as a source of help and advice, but not something to rely for easy answers.
+None of the code in this repo is AI generated. While I did use ChatGPT to help with code review, I tried treat ChatGPT strictly as a source of feedback and advice.
 
 ## Goals
 
