@@ -8,6 +8,8 @@ import {
 
 /**
  * A reusable SVG component.
+ * @param pathParams - The string used in the `d` attribute of the `<path>` element to draw the image
+ * @param className - The class name of the element that will hold the `<svg>` element
  */
 
 export class SVGComponent {

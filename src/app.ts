@@ -2,7 +2,7 @@ import { NavigationDesktop } from './components/navigation-desktop/navigation-de
 import { SVGComponent } from './components/svg-component/svg-component';
 import { home, search } from './constants/svgs';
 
-// Navigation
+// Render Desktop Navigation
 
 new NavigationDesktop();
 new SVGComponent(home, `.icon__home`);
