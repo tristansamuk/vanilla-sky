@@ -41,7 +41,7 @@ export class Navigation {
       'button'
     ) as HTMLButtonElement;
 
-    this.renderNav();
+    this.render();
     this.attachIcons();
     this.formatButton();
   }
@@ -67,7 +67,7 @@ export class Navigation {
     new SVGComponent(newPost, newPostSVG, 'button');
   }
 
-  private renderNav() {
+  private render() {
     this.ulEl.innerHTML = '';
     this.listItemEl.innerHTML = '';
 
