@@ -11,6 +11,7 @@ import {
 export class Navigation {
   private templateEl: HTMLTemplateElement;
   private parentEl: HTMLElement;
+
   private navEl: HTMLElement;
   private ulEl: HTMLUListElement;
   private listItemEl: HTMLLIElement;
@@ -19,11 +20,11 @@ export class Navigation {
 
   constructor(templateElId = 'nav-template', parentElId = 'app') {
     this.parentEl = document.getElementById(parentElId) as HTMLDivElement;
-
     this.templateEl = document.getElementById(
       templateElId
     ) as HTMLTemplateElement;
     const templateContent = document.importNode(this.templateEl.content, true);
+
     this.navEl = templateContent.querySelector('nav') as HTMLElement;
     this.ulEl = templateContent.querySelector('ul') as HTMLUListElement;
     this.listItemEl = templateContent.querySelector('li') as HTMLLIElement;

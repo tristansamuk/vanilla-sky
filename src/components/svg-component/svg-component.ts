@@ -34,12 +34,12 @@ export class SVGComponent {
     this.parentEl = document.querySelector(this.parentClassName) as HTMLElement;
     const templateContent = document.importNode(this.templateEl.content, true);
 
+    this.svgEl = templateContent.querySelector('svg') as SVGElement;
+    this.pathEl = templateContent.querySelector('path') as SVGPathElement;
+
     this.pathAttributes = pathParams;
     this.svgAttributes = svgParams;
     this.parentClassName = className;
-
-    this.svgEl = templateContent.querySelector('svg') as SVGElement;
-    this.pathEl = templateContent.querySelector('path') as SVGPathElement;
 
     this.configureSVG(this.svgAttributes);
     this.configurePath(this.pathAttributes);
