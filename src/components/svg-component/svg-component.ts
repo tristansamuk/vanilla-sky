@@ -9,6 +9,7 @@ import {
 /**
  * A reusable SVG component.
  * @param pathParams - The string used in the `d` attribute of the `<path>` element to draw the image
+ * @param svgParams - The attributes object to be applied to `<svg>` element
  * @param className - The class name of the element that will hold the `<svg>` element
  */
 
@@ -16,25 +17,26 @@ export class SVGComponent {
   private templateEl = document.getElementById(
     'svg-template'
   ) as HTMLTemplateElement;
-  private hostEl: HTMLElement;
+  private parentEl: HTMLElement;
+
   private svgEl: SVGElement;
   private pathEl: SVGPathElement;
   private svgAttributes: SVGAttributes;
   private pathAttributes: PathAttributes;
-  private hostClassName: string;
+  private parentClassName: string;
 
   constructor(
     pathParams: PathAttributes,
     svgParams = defaultSVGAttributes,
     className: string
   ) {
-    this.hostClassName = className;
-    this.hostEl = document.querySelector(this.hostClassName) as HTMLElement;
+    this.parentClassName = className;
+    this.parentEl = document.querySelector(this.parentClassName) as HTMLElement;
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.pathAttributes = pathParams;
     this.svgAttributes = svgParams;
-    this.hostClassName = className;
+    this.parentClassName = className;
 
     this.svgEl = templateContent.querySelector('svg') as SVGElement;
     this.pathEl = templateContent.querySelector('path') as SVGPathElement;
@@ -48,6 +50,7 @@ export class SVGComponent {
   }
 
   private configureSVG(attributes: SVGAttributes) {
+    // TODO: Refactor with iterator
     this.svgEl.setAttribute(SvgAttributeNames.FILL, attributes.fill);
     this.svgEl.setAttribute(SvgAttributeNames.WIDTH, attributes.width);
     this.svgEl.setAttribute(SvgAttributeNames.HEIGHT, attributes.height);
@@ -67,6 +70,6 @@ export class SVGComponent {
   }
 
   private render() {
-    this.hostEl.insertAdjacentElement('afterbegin', this.svgEl);
+    this.parentEl.insertAdjacentElement('afterbegin', this.svgEl);
   }
 }

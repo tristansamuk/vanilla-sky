@@ -2,30 +2,23 @@ import './navigation.css';
 import { buttons, navigationMain } from '../../constants/ui-strings';
 import { SVGComponent } from '../svg-component/svg-component';
 import {
-  chat,
-  feeds,
-  home,
-  lists,
-  notifications,
+  navIcons,
   newPost,
-  profile,
-  search,
-  settings,
   newPostSVG,
   defaultSVGAttributes,
 } from '../../constants/svgs';
 
 export class Navigation {
   private templateEl: HTMLTemplateElement;
-  private hostEl: HTMLElement;
+  private parentEl: HTMLElement;
   private navEl: HTMLElement;
   private ulEl: HTMLUListElement;
   private listItemEl: HTMLLIElement;
   private paragraphEl: HTMLParagraphElement;
   private buttonEl: HTMLButtonElement;
 
-  constructor(templateElId = 'nav-template', hostElId = 'app') {
-    this.hostEl = document.getElementById(hostElId) as HTMLDivElement;
+  constructor(templateElId = 'nav-template', parentElId = 'app') {
+    this.parentEl = document.getElementById(parentElId) as HTMLDivElement;
 
     this.templateEl = document.getElementById(
       templateElId
@@ -47,19 +40,9 @@ export class Navigation {
   }
 
   private attachIcons() {
-    // TODO: refactor to make dynamic and put inside render() method
-    new SVGComponent(home, defaultSVGAttributes, `.nav__icon--home`);
-    new SVGComponent(search, defaultSVGAttributes, `.nav__icon--search`);
-    new SVGComponent(
-      notifications,
-      defaultSVGAttributes,
-      `.nav__icon--notifications`
-    );
-    new SVGComponent(chat, defaultSVGAttributes, `.nav__icon--chat`);
-    new SVGComponent(feeds, defaultSVGAttributes, `.nav__icon--feeds`);
-    new SVGComponent(lists, defaultSVGAttributes, `.nav__icon--lists`);
-    new SVGComponent(profile, defaultSVGAttributes, `.nav__icon--profile`);
-    new SVGComponent(settings, defaultSVGAttributes, `.nav__icon--settings`);
+    Object.entries(navIcons).forEach(([key, value]) => {
+      new SVGComponent(value, defaultSVGAttributes, `.nav__icon--${key}`);
+    });
   }
 
   private formatButton() {
@@ -89,6 +72,6 @@ export class Navigation {
       this.listItemEl.classList.remove(iconClass);
     });
 
-    this.hostEl.append(this.navEl);
+    this.parentEl.append(this.navEl);
   }
 }

@@ -1,12 +1,12 @@
 import './page-layout.css';
 
 export class PageLayout {
-  private hostEl: HTMLElement;
+  private parentEl: HTMLElement;
   private templateEl: HTMLTemplateElement;
   private pageLayout: HTMLDivElement;
 
-  constructor(hostElId: string) {
-    this.hostEl = document.getElementById(hostElId) as HTMLElement;
+  constructor(parentElId: string) {
+    this.parentEl = document.getElementById(parentElId) as HTMLElement;
     this.templateEl = document.getElementById(
       'page-layout-template'
     ) as HTMLTemplateElement;
@@ -20,6 +20,6 @@ export class PageLayout {
   }
 
   private render() {
-    this.hostEl.append(this.pageLayout);
+    this.parentEl.append(this.pageLayout);
   }
 }
