@@ -20,6 +20,6 @@ export class PageLayout {
   }
 
   private render() {
-    this.hostEl.appendChild(this.pageLayout);
+    this.hostEl.append(this.pageLayout);
   }
 }

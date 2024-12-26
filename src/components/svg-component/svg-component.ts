@@ -42,7 +42,7 @@ export class SVGComponent {
     this.configureSVG(this.svgAttributes);
     this.configurePath(this.pathAttributes);
 
-    this.svgEl.appendChild(this.pathEl);
+    this.svgEl.append(this.pathEl);
 
     this.render();
   }

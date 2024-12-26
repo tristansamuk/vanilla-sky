@@ -49,3 +49,25 @@ src/
 ## Approach to Building Components
 
 Components are created using object-oriented programming principles ...
+
+### Elements
+
+- No `.InnerHTML` due to security concens
+- `.append(element)` for adding elements (vs. `appendChild()`)
+- `.remove(element)`
+
+#### Attributes
+
+- `.setAttribute('id', "my-id")`
+- `.removeAttribute('id', "my-id")`
+- `.dataset.example`: access (or add new) `data` attributes on an element
+
+### Classes
+
+- `.classList.add('my-class')`
+- `.classList.remove('my-class')`
+- `.classList.toggle('my-class')`: remove if present, add if not present (pass in boolean for auto add/remove)
+
+### Style
+
+- `.style.backgroundColor('red')`: access css properties
