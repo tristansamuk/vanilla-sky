@@ -8,6 +8,12 @@ import {
   defaultSVGAttributes,
 } from '../../constants/svgs';
 
+/**
+ * @class Navigation sidebar component
+ * @param {string} templateElId - The `id` of the `<template>` element
+ * @param {string} parentElId - `The` id of the targe parent element
+ */
+
 export class Navigation {
   private templateEl: HTMLTemplateElement;
   private parentEl: HTMLElement;
