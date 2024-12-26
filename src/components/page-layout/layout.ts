@@ -1,6 +1,11 @@
-import './page-layout.css';
+import './layout.css';
 
-export class PageLayout {
+/**
+ * @class A resposive page layout component that contains the other components rendered on each page
+ * @param {string} templateElId - The `id` of the `<template>` element
+ * @param {string} parentElId - `The` id of the targe parent element
+ */
+export class Layout {
   private parentEl: HTMLElement;
   private templateEl: HTMLTemplateElement;
   private pageLayout: HTMLDivElement;
@@ -8,12 +13,12 @@ export class PageLayout {
   constructor(parentElId: string) {
     this.parentEl = document.getElementById(parentElId) as HTMLElement;
     this.templateEl = document.getElementById(
-      'page-layout-template'
+      'layout-template'
     ) as HTMLTemplateElement;
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.pageLayout = templateContent.querySelector(
-      '.page-layout'
+      '.layout'
     ) as HTMLDivElement;
 
     this.render();

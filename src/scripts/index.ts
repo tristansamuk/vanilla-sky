@@ -1,3 +1,5 @@
-import { Navigation } from '../components/navigation/navigation';
+import { Layout } from '../components/page-layout/layout';
+// import { Navigation } from '../components/navigation/navigation';
 
-new Navigation();
+new Layout('app');
+// new Navigation();

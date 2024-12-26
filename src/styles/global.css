@@ -15,18 +15,34 @@ body {
   color: var(--text-primary);
 }
 
-#main {
-  display: flex;
-  justify-content: center;
-}
-
-#app {
-  max-width: 1440px;
-  margin: auto;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+/* Parent element for all page content */
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  #app {
+    margin: auto;
+  }
+}
+
+@media (min-width: 1300px) {
+  #app {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+#app {
+  max-width: 1440px;
+  margin: auto;
 }

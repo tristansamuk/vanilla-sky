@@ -2,7 +2,7 @@
   /* Colors */
 
   --background-input: #f1f3f5;
-  --background-main: #ffffff;
+  --background-primary: #ffffff;
   --border: rgb(212, 219, 226);
   --brand-blue: rgb(0, 133, 255);
   --hover-light: rgb(241, 243, 245);
@@ -13,6 +13,7 @@
   --text-light: #ffffff;
 
   /* Measurements */
+
   --border-radius-sm: 8px;
   --border-radius-xl: 999px;
 
@@ -22,6 +23,7 @@
   --spacing-2: 8px;
   --spacing-3: 12px;
   --spacing-5: 20px;
+  --spacing-7: 28px;
 
   /* Typography */
 
