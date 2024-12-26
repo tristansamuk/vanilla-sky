@@ -1,5 +1,6 @@
 import { Layout } from '../components/page-layout/layout';
-// import { Navigation } from '../components/navigation/navigation';
+import { NavigationDesktop } from '../components/navigation-desktop/navigation-desktop';
 
 new Layout('app');
-// new Navigation();
+new NavigationDesktop('.layout__nav--desktop');
+// new NavigationMobile('.layout__nav--mobile');

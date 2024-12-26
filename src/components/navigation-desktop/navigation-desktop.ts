@@ -1,4 +1,4 @@
-import './navigation.css';
+import './navigation-desktop.css';
 import { buttons, navigationMain } from '../../constants/ui-strings';
 import { SVGComponent } from '../svg-component/svg-component';
 import {
@@ -9,12 +9,11 @@ import {
 } from '../../constants/svgs';
 
 /**
- * @class Navigation sidebar component
- * @param {string} templateElId - The `id` of the `<template>` element
- * @param {string} parentElId - `The` id of the targe parent element
+ * @class Desktop navigation component
+ * @param {string} parentElClass - The class name of the target parent element
  */
 
-export class Navigation {
+export class NavigationDesktop {
   private templateEl: HTMLTemplateElement;
   private parentEl: HTMLElement;
 
@@ -24,10 +23,10 @@ export class Navigation {
   private paragraphEl: HTMLParagraphElement;
   private buttonEl: HTMLButtonElement;
 
-  constructor(templateElId = 'nav-template', parentElId = 'app') {
-    this.parentEl = document.getElementById(parentElId) as HTMLDivElement;
+  constructor(parentElClass: string) {
+    this.parentEl = document.querySelector(parentElClass) as HTMLDivElement;
     this.templateEl = document.getElementById(
-      templateElId
+      'nav-template'
     ) as HTMLTemplateElement;
     const templateContent = document.importNode(this.templateEl.content, true);
 
