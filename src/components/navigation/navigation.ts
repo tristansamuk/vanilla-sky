@@ -1,4 +1,4 @@
-import './navigation-desktop.css';
+import './navigation.css';
 import { buttons, navigationMain } from '../../constants/ui-strings';
 import { SVGComponent } from '../svg-component/svg-component';
 import {
@@ -9,11 +9,11 @@ import {
 } from '../../constants/svgs';
 
 /**
- * @class Desktop navigation component
+ * @class Navigation component
  * @param {string} parentElClass - The class name of the target parent element
  */
 
-export class NavigationDesktop {
+export class Navigation {
   private templateEl: HTMLTemplateElement;
   private parentEl: HTMLElement;
 
@@ -46,6 +46,9 @@ export class NavigationDesktop {
   }
 
   private attachIcons() {
+    if (this.listItemEl.querySelector('svg')) {
+      return;
+    }
     Object.entries(navIcons).forEach(([key, value]) => {
       new SVGComponent(value, defaultSVGAttributes, `.nav__icon--${key}`);
     });

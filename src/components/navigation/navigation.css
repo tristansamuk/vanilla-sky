@@ -36,41 +36,29 @@
 
 .nav__button {
   display: none;
-  /* ToDo: remove text and stick to right side of screen on mobile */
 }
 
 @media (min-width: 800px) {
+  .nav__item {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1300px) {
   .nav {
     width: 15rem;
   }
-  /* .nav__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-  } */
-  /* .nav__item {
-    display: flex;
-    gap: var(--spacing-2);
-    justify-content: left;
-    align-items: center;
-    height: 3rem;
-    font-size: var(--text-lg);
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-3);
-    transition: all 100ms;
-  } */
 
-  /* .nav__item:hover {
-    background-color: var(--hover-light);
-  } */
+  .nav__list {
+  }
+
+  .nav__item {
+    justify-content: left;
+    display: flex;
+  }
 
   .nav__text {
     display: inline;
-  }
-
-  .nav__button-container {
-    padding-top: var(--spacing-5);
-    padding-left: var(--spacing-3);
   }
 
   .nav__button {
@@ -86,15 +74,3 @@
     font-weight: var(--font-weight-semi-bold);
   }
 }
-
-/* @media (min-width: 1300px) {
-  .nav {
-    display
-  }
-  .nav__list {
-    display: flex;
-  }
-  .nav__item {
-    display: flex;
-  }
-} */
