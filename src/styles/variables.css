@@ -1,0 +1,37 @@
+:root {
+  /* Colors */
+
+  --background-input: #f1f3f5;
+  --background-primary: #ffffff;
+  --border: rgb(212, 219, 226);
+  --brand-blue: rgb(0, 133, 255);
+  --hover-light: rgb(241, 243, 245);
+  --text-highlight: #1083fe;
+  --text-primary: #0b0f11;
+  --text-secondary: #42576c;
+  --text-tertiary: #6f969f;
+  --text-light: #ffffff;
+
+  /* Measurements */
+
+  --border-radius-sm: 8px;
+  --border-radius-xl: 999px;
+
+  /* Spacing */
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-5: 20px;
+  --spacing-7: 28px;
+
+  /* Typography */
+
+  --font-primary: Inter, sans-serif;
+  --text-small: 13.125px;
+  --text-md: 15px;
+  --text-lg: 18.75px;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 800;
+}

@@ -1,13 +1,9 @@
-interface UIStrings {
-  [key: string]: string;
-}
-
-export const buttons: UIStrings = {
+export const buttons = {
   editProfile: 'Edit Profile',
   newPost: 'New Post',
 };
 
-export const feeds: UIStrings = {
+export const feeds = {
   discover: 'Discover',
   film: 'Film',
   following: 'Following',
@@ -18,22 +14,22 @@ export const feeds: UIStrings = {
   whatsHotClassic: "What's Hot Classic",
 };
 
-export const inputs: UIStrings = {
+export const inputs = {
   search: 'Search',
 };
 
-export const navigationMain: UIStrings = {
+export const navigationMain = {
+  home: 'Home',
+  search: 'Search',
+  notifications: 'Notifications',
   chat: 'Chat',
   feeds: 'Feeds',
-  home: 'Home',
   lists: 'Lists',
-  notifications: 'Notifications',
   profile: 'Profile',
-  search: 'Search',
   settings: 'Settings',
 };
 
-export const navigationProfile: UIStrings = {
+export const navigationProfile = {
   feeds: 'Feeds',
   likes: 'Likes',
   lists: 'Lists',
@@ -43,7 +39,7 @@ export const navigationProfile: UIStrings = {
   starterPacks: 'Starter Packs',
 };
 
-export const profile: UIStrings = {
+export const profile = {
   followers: 'followers',
   following: 'following',
   posts: 'posts',
