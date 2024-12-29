@@ -2,7 +2,7 @@
 
 Vanillasky is a clone of the social media platform [Bluesky](https://bsky.app/) built using only TypeScript, CSS, and HTML.
 
-Other than Vite for building and testing, I didn't use any third-party software, frameworks, or libraries.
+Other than Vite, I didn't use any third-party software, frameworks, or libraries.
 
 This initial version of the project is frontend-only, so posts and other user data don't persist between sessions. However, I plan to implement a backend as a future project, most likely using Node and a similar vanilla TypeScript approach.
 
