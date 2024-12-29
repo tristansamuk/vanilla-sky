@@ -1,0 +1,35 @@
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.profile-header__container--mobile-only-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.profile-header__text {
+  display: inline;
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+}
+
+.profile-header__text--large {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.profile-header__text--bold {
+  display: inline;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.profile-header__profile-pic {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--border-radius-xl);
+  object-fit: cover;
+}

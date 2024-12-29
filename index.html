@@ -19,14 +19,46 @@
     </div>
   </template>
 
+  <template id="profile-header-template">
+    <div class="profile-header">
+      <img
+        class="profile-header__pic"
+        src="./src/assets/images/profile-pic-riker.jpg"
+      />
+      <div class="profile-header__container--mobile-only-info">
+        <div>
+          <p class="profile-header__text--large">tristan</p>
+          <p class="profile-header__text">@tsamuk.bsky.social</p>
+        </div>
+        <div class="profile-header__cointainer--follows">
+          <p class="profile-header__text">
+            <span class="profile-header__text--bold">14</span> followers
+          </p>
+
+          <p class="profile-header__text">·</p>
+          <p class="profile-header__text">
+            <span class="profile-header__text--bold">100</span>
+            following
+          </p>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <template id="nav-template">
     <nav class="nav">
+      <div class="nav__container--profile-pic">
+        <img
+          class="nav__profile-pic"
+          src="./src/assets/images/profile-pic-riker.jpg"
+        />
+      </div>
       <ul class="nav__list">
         <li class="nav__item">
           <p class="nav__text"></p>
         </li>
       </ul>
-      <div class="nav__button-container">
+      <div class="nav__container--button">
         <button class="nav__button"></button>
       </div>
     </nav>

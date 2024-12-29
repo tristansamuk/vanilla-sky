@@ -18,6 +18,7 @@ export class Navigation {
   private parentEl: HTMLElement;
 
   private navEl: HTMLElement;
+  private imgEl: HTMLImageElement;
   private ulEl: HTMLUListElement;
   private listItemEl: HTMLLIElement;
   private paragraphEl: HTMLParagraphElement;
@@ -31,6 +32,7 @@ export class Navigation {
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.navEl = templateContent.querySelector('nav') as HTMLElement;
+    this.imgEl = templateContent.querySelector('img') as HTMLImageElement;
     this.ulEl = templateContent.querySelector('ul') as HTMLUListElement;
     this.listItemEl = templateContent.querySelector('li') as HTMLLIElement;
     this.paragraphEl = templateContent.querySelector(
