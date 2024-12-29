@@ -35,10 +35,9 @@ And while I love using AI tools, none of the code in this repo is AI-generated. 
 
 ### ✅ Completed Features
 
-- Responsive page layout and navigation
-
 ### 🌟 Planned Features
 
+- Responsive page layout and navigation (in progress)
 - Feed view
 - Post creation, editing, and deletion
 - Likes and comments
