@@ -3,9 +3,10 @@
 
   --background-input: #f1f3f5;
   --background-primary: #ffffff;
-  --border: rgb(212, 219, 226);
-  --brand-blue: rgb(0, 133, 255);
-  --hover-light: rgb(241, 243, 245);
+  --border: #d4dbe2;
+  --brand-blue: #0085ff;
+  --hover-blue: #0168d5;
+  --hover-light: #f1f3f5;
   --text-highlight: #1083fe;
   --text-primary: #0b0f11;
   --text-secondary: #42576c;

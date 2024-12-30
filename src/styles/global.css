@@ -28,6 +28,11 @@ body {
   }
 }
 
+button {
+  font-size: var(--text-md);
+  font-family: var(--font-primary);
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -55,6 +60,7 @@ ul {
     margin: auto;
   }
 }
+
 #app {
   max-width: 1440px;
   margin: auto;

@@ -115,7 +115,7 @@
 
   .nav__button {
     display: flex;
-    width: 124px;
+    width: 132px;
     height: 44px;
     background-color: var(--brand-blue);
     color: var(--text-light);
@@ -125,7 +125,10 @@
     border: none;
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-3) var(--spacing-5);
-    font-weight: var(--font-weight-semi-bold);
+  }
+
+  .nav__button:hover {
+    background-color: var(--hover-blue);
   }
 
   .nav__button > svg {
