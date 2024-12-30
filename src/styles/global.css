@@ -9,10 +9,23 @@
 body {
   width: 100%;
   overflow-x: hidden;
+
   font-family: var(--font-primary);
   font-size: var(--text-md);
   font-weight: var(--font-weight-regular);
   color: var(--text-primary);
+}
+
+@media (min-width: 800px) {
+  body {
+    padding-left: 0px;
+  }
+}
+
+@media (min-width: 1300px) {
+  body {
+    padding-left: 85px;
+  }
 }
 
 ul {

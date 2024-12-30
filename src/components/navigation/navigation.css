@@ -77,6 +77,11 @@
     height: 64px;
     width: 64px;
   }
+
+  .nav__item > svg {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 /* Desktop */
@@ -84,6 +89,7 @@
 @media (min-width: 1300px) {
   .nav {
     width: 15rem;
+    margin-top: var(--spacing-2_5);
   }
 
   .nav__container--profile-pic {
@@ -98,14 +104,21 @@
     display: flex;
   }
 
+  .nav__item > svg {
+    width: 28px;
+    height: 24px;
+  }
+
   .nav__text {
     display: inline;
   }
 
   .nav__button {
+    display: flex;
+    width: 124px;
+    height: 44px;
     background-color: var(--brand-blue);
     color: var(--text-light);
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--spacing-2);
@@ -113,5 +126,10 @@
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-3) var(--spacing-5);
     font-weight: var(--font-weight-semi-bold);
+  }
+
+  .nav__button > svg {
+    height: 16px;
+    width: 16px;
   }
 }

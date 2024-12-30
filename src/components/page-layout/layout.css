@@ -51,7 +51,9 @@
 
   .layout__nav--desktop {
     display: flex;
+    position: sticky;
     width: 240px;
+    height: fit-content;
     padding: 0 var(--spacing-5);
   }
 

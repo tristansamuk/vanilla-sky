@@ -63,7 +63,7 @@ export const defaultSVGAttributes: SVGAttributes = {
   viewBox: '0 0 24 24',
   height: '27',
   ariaHidden: 'true',
-  class: 'nav-svg--home',
+  class: '',
   style: 'color: rgb(11, 15, 20)',
 };
 
