@@ -29,6 +29,14 @@ export const navigationMain = {
   settings: 'Settings',
 };
 
+export const bottomNavBarItems = {
+  home: 'Home',
+  search: 'Search',
+  chat: 'Chat',
+  notifications: 'Notifications',
+  profile: 'Profile',
+};
+
 export const navigationProfile = {
   feeds: 'Feeds',
   likes: 'Likes',

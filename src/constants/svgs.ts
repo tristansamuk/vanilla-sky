@@ -25,6 +25,13 @@ export interface NavIcons {
   search: PathAttributes;
   settings: PathAttributes;
 }
+export interface NavBarIcons {
+  home: PathAttributes;
+  search: PathAttributes;
+  chat: PathAttributes;
+  notifications: PathAttributes;
+  profile: PathAttributes;
+}
 
 /**
  * Enum used in SVGComponent as keys to set attributes for `<svg>` element
@@ -148,4 +155,12 @@ export const navIcons: NavIcons = {
   profile,
   search,
   settings,
+};
+
+export const navBarIcons: NavBarIcons = {
+  home,
+  search,
+  chat,
+  notifications,
+  profile,
 };

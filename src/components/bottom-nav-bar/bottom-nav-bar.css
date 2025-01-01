@@ -9,6 +9,19 @@
   padding-right: var(--spacing-2_5);
 }
 
+.bottom-nav-bar__list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.bottom-nav-bar__item {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  margin: 13px 0 var(--spacing-4) 0;
+}
+
 @media (min-width: 800px) {
   .bottom-nav-bar {
     display: none;

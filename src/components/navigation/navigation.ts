@@ -52,7 +52,11 @@ export class Navigation {
       return;
     }
     Object.entries(navIcons).forEach(([key, value]) => {
-      new SVGComponent(value, defaultSVGAttributes, `.nav__icon--${key}`);
+      new SVGComponent(
+        value,
+        defaultSVGAttributes,
+        `.nav__icon-container--${key}`
+      );
     });
   }
 
@@ -67,11 +71,13 @@ export class Navigation {
 
     Object.entries(navigationMain).forEach(([key, value]) => {
       // Add a class that SVGComponent can use to attach the <svg> icon to the DOM.
-      const iconClass = `nav__icon--${key}`;
+      const iconClass = `nav__icon-container--${key}`;
       this.listItemEl.classList.add(iconClass);
 
-      // Copy the <li> and <p>, and set text content
+      // Copy the <li>
       const navListItem = this.listItemEl.cloneNode(true) as HTMLLIElement;
+
+      // Copy the <p>, and set text content
       const navItemParagraph = this.paragraphEl.cloneNode(true);
       navItemParagraph.textContent = value;
 
@@ -79,7 +85,7 @@ export class Navigation {
       navListItem.append(navItemParagraph);
       this.ulEl.append(navListItem);
 
-      // Remove the class from the original element
+      // Remove the class from the original element (otherwise they'd keep getting added with each loop)
       this.listItemEl.classList.remove(iconClass);
     });
 
