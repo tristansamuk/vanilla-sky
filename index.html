@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="stylesheet" href="./src/styles/global.css" />
-    <title>Discover -- Bluesky</title>
+    <title>Discover — Bluesky</title>
   </head>
   <script type="module" src="/src/scripts/index.ts" defer></script>
 
@@ -19,6 +19,39 @@
         <div class="layout__search">search</div>
       </div>
     </div>
+  </template>
+
+  <template id="svg-template">
+    <svg>
+      <path></path>
+    </svg>
+  </template>
+
+  <template id="nav-template">
+    <nav class="nav">
+      <div class="nav__container--profile-pic">
+        <img
+          class="nav__profile-pic"
+          src="./src/assets/images/profile-pic-riker.jpg"
+        />
+      </div>
+      <ul class="nav__list">
+        <li class="nav__item">
+          <p class="nav__text"></p>
+        </li>
+      </ul>
+      <div class="nav__container--button">
+        <button class="nav__button"></button>
+      </div>
+    </nav>
+  </template>
+
+  <template id="bottom-nav-bar-template">
+    <nav class="bottom-nav-bar">
+      <ul class="bottom-nav-bar__list">
+        <li class="bottom-nav-bar__item"></li>
+      </ul>
+    </nav>
   </template>
 
   <template id="profile-header-template">
@@ -45,31 +78,6 @@
         </div>
       </div>
     </div>
-  </template>
-
-  <template id="nav-template">
-    <nav class="nav">
-      <div class="nav__container--profile-pic">
-        <img
-          class="nav__profile-pic"
-          src="./src/assets/images/profile-pic-riker.jpg"
-        />
-      </div>
-      <ul class="nav__list">
-        <li class="nav__item">
-          <p class="nav__text"></p>
-        </li>
-      </ul>
-      <div class="nav__container--button">
-        <button class="nav__button"></button>
-      </div>
-    </nav>
-  </template>
-
-  <template id="svg-template">
-    <svg>
-      <path></path>
-    </svg>
   </template>
 
   <body>
