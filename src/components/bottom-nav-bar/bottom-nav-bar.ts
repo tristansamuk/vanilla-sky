@@ -2,6 +2,7 @@ import './bottom-nav-bar.css';
 import { bottomNavBarItems } from '../../constants/ui-strings';
 import { defaultSVGAttributes, navBarIcons } from '../../constants/svgs';
 import { SVGComponent } from '../svg-component/svg-component';
+import { createTemplate } from '../../scripts/utils';
 
 /**
  * @class Bottom navigation bar component that appears on screens and windows below 800px
@@ -16,9 +17,13 @@ export class BottomNavBar {
 
   constructor() {
     this.parentEl = document.getElementById('app') as HTMLDivElement;
-    this.templateEl = document.getElementById(
-      'bottom-nav-bar-template'
-    ) as HTMLTemplateElement;
+    this.templateEl = createTemplate(/*html*/ `
+      <nav class="bottom-nav-bar">
+        <ul class="bottom-nav-bar__list">
+          <li class="bottom-nav-bar__item"></li>
+        </ul>
+      </nav>`);
+
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.navEl = templateContent.querySelector('nav') as HTMLElement;
@@ -42,7 +47,7 @@ export class BottomNavBar {
     // Clear contents of <ul>
     this.ulEl.innerHTML = '';
 
-    Object.entries(bottomNavBarItems).forEach(([key, value]) => {
+    Object.entries(bottomNavBarItems).forEach(([key, _value]) => {
       // Add a class that SVGComponent can use to attach the <svg> icon to the DOM.
       const iconClass = `bottom-nav-bar__icon-container--${key}`;
       this.liEl.classList.add(iconClass);
@@ -55,6 +60,8 @@ export class BottomNavBar {
       this.liEl.classList.remove(iconClass);
     });
 
-    this.parentEl.insertAdjacentElement('beforeend', this.navEl);
+    // Ensures only one of the component is ever present in the parent element
+    !this.parentEl.contains(this.navEl) &&
+      this.parentEl.insertAdjacentElement('beforeend', this.navEl);
   }
 }

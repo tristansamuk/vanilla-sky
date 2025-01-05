@@ -1,5 +1,6 @@
 import './navigation.css';
 import { buttons, navigationMain } from '../../constants/ui-strings';
+import { createTemplate } from '../../scripts/utils';
 import { SVGComponent } from '../svg-component/svg-component';
 import {
   navIcons,
@@ -14,26 +15,49 @@ import {
  */
 
 export class Navigation {
-  private templateEl: HTMLTemplateElement;
   private parentEl: HTMLElement;
+  private templateEl: HTMLTemplateElement;
 
   private navEl: HTMLElement;
   private imgEl: HTMLImageElement;
   private ulEl: HTMLUListElement;
   private listItemEl: HTMLLIElement;
+  private anchorEl: HTMLAnchorElement;
   private paragraphEl: HTMLParagraphElement;
   private buttonEl: HTMLButtonElement;
 
   constructor(parentElClass: string) {
     this.parentEl = document.querySelector(parentElClass) as HTMLDivElement;
-    this.templateEl = document.getElementById(
-      'nav-template'
-    ) as HTMLTemplateElement;
+
+    this.templateEl = createTemplate(/*html*/ `
+        <nav class="nav">
+          <div class="nav__container--profile-pic">
+            <img
+              class="nav__profile-pic"
+              src="./src/assets/images/profile-pic-riker.jpg"
+            />
+          </div>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a>
+                <p class="nav__text"></p>
+              </a>
+            </li>
+           </ul>
+          <div class="nav__container--button">
+            <button class="nav__button"></button>
+          </div>
+        </nav>
+      `) as HTMLTemplateElement;
+
     const templateContent = document.importNode(this.templateEl.content, true);
+
+    console.log(templateContent.querySelectorAll('nav'));
 
     this.navEl = templateContent.querySelector('nav') as HTMLElement;
     this.imgEl = templateContent.querySelector('img') as HTMLImageElement;
     this.ulEl = templateContent.querySelector('ul') as HTMLUListElement;
+    this.anchorEl = templateContent.querySelector('a') as HTMLAnchorElement;
     this.listItemEl = templateContent.querySelector('li') as HTMLLIElement;
     this.paragraphEl = templateContent.querySelector(
       'p'
@@ -52,11 +76,7 @@ export class Navigation {
       return;
     }
     Object.entries(navIcons).forEach(([key, value]) => {
-      new SVGComponent(
-        value,
-        defaultSVGAttributes,
-        `.nav__icon-container--${key}`
-      );
+      new SVGComponent(value, defaultSVGAttributes, `.nav__link--${key}`);
     });
   }
 
@@ -68,27 +88,29 @@ export class Navigation {
   private render() {
     this.ulEl.innerHTML = '';
     this.listItemEl.innerHTML = '';
+    this.anchorEl.innerHTML = '';
 
     Object.entries(navigationMain).forEach(([key, value]) => {
-      // Add a class that SVGComponent can use to attach the <svg> icon to the DOM.
-      const iconClass = `nav__icon-container--${key}`;
-      this.listItemEl.classList.add(iconClass);
-
-      // Copy the <li>
+      // Copy the <li> and the <a>
       const navListItem = this.listItemEl.cloneNode(true) as HTMLLIElement;
+      const link = this.anchorEl.cloneNode(true) as HTMLAnchorElement;
 
-      // Copy the <p>, and set text content
+      // Set `<a>` href, add class (for attaching SVGs), attach to <li>
+      link.setAttribute('href', `./${key}.html`);
+      link.classList.add(`nav__link--${key}`);
+      navListItem.append(link);
+
+      // Copy the <p> and set text content
       const navItemParagraph = this.paragraphEl.cloneNode(true);
       navItemParagraph.textContent = value;
 
-      // Attach the <p> to the <li>, and the <li> to the <ul>
-      navListItem.append(navItemParagraph);
-      this.ulEl.append(navListItem);
+      // Insert the <p> into the <a>, and the <li> to the <ul>
+      navListItem.querySelector('a')!.append(navItemParagraph);
 
-      // Remove the class from the original element (otherwise they'd keep getting added with each loop)
-      this.listItemEl.classList.remove(iconClass);
+      this.ulEl.append(navListItem);
     });
 
-    this.parentEl.append(this.navEl);
+    // Ensures only one of the component is ever present in the parent element
+    !this.parentEl.contains(this.navEl) && this.parentEl.append(this.navEl);
   }
 }

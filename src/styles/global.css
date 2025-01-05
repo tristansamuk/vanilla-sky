@@ -37,6 +37,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
 button {
   font-size: var(--text-md);
   font-family: var(--font-primary);

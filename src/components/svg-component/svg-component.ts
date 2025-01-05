@@ -5,46 +5,46 @@ import {
   SvgAttributeNames,
   SVGAttributes,
 } from '../../constants/svgs';
+import { createTemplate } from '../../scripts/utils';
 
 /**
  * @class A reusable SVG component.
  * @param {string} pathParams - The string used in the `d` attribute of the `<path>` element to draw the image
  * @param {SVGAttributes} svgParams - The attributes object to be applied to `<svg>` element
- * @param {string} className - The class name of the element that will hold the `<svg>` element
+ * @param {string} parentEl - The css selector of the element that will hold the `<svg>` element
  */
 
 export class SVGComponent {
-  private templateEl = document.getElementById(
-    'svg-template'
-  ) as HTMLTemplateElement;
+  private templateEl: HTMLTemplateElement;
   private parentEl: HTMLElement;
 
   private svgEl: SVGElement;
   private pathEl: SVGPathElement;
   private svgAttributes: SVGAttributes;
   private pathAttributes: PathAttributes;
-  private parentClassName: string;
 
   constructor(
     pathParams: PathAttributes,
     svgParams = defaultSVGAttributes,
-    className: string
+    parentClass: string
   ) {
-    this.parentClassName = className;
-    this.parentEl = document.querySelector(this.parentClassName) as HTMLElement;
+    this.pathAttributes = pathParams;
+    this.svgAttributes = svgParams;
+    this.parentEl = document.querySelector(parentClass) as HTMLElement;
+
+    this.templateEl = createTemplate(/*html*/ `
+      <svg>
+        <path></path>
+      </svg>`);
+
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.svgEl = templateContent.querySelector('svg') as SVGElement;
+    console.log('this.svgEl', this.svgEl);
     this.pathEl = templateContent.querySelector('path') as SVGPathElement;
-
-    this.pathAttributes = pathParams;
-    this.svgAttributes = svgParams;
-    this.parentClassName = className;
 
     this.configureSVGEl(this.svgAttributes);
     this.configurePathEl(this.pathAttributes);
-
-    this.svgEl.append(this.pathEl);
 
     this.render();
   }

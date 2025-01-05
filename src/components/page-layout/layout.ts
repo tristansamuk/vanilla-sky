@@ -1,3 +1,4 @@
+import { createTemplate } from '../../scripts/utils';
 import './layout.css';
 
 /**
@@ -12,9 +13,17 @@ export class Layout {
 
   constructor(parentElId: string) {
     this.parentEl = document.getElementById(parentElId) as HTMLElement;
-    this.templateEl = document.getElementById(
-      'layout-template'
-    ) as HTMLTemplateElement;
+
+    this.templateEl = createTemplate(/*html*/ `
+      <div class="layout">
+        <div class="layout__nav--mobile"></div>
+        <div class="layout__container">
+          <div class="layout__nav--desktop"></div>
+          <div class="layout__feed">feed</div>
+          <div class="layout__search">search</div>
+        </div>
+      </div>`);
+
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.pageLayout = templateContent.querySelector(
