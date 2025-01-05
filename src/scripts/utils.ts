@@ -1,6 +1,8 @@
 import { BottomNavBar } from '../components/bottom-nav-bar/bottom-nav-bar';
 import { Layout } from '../components/page-layout/layout';
 import { Navigation } from '../components/navigation/navigation';
+import { SearchPage } from '../components/pages/search-page/search-page';
+import { NotificationsPage } from '../components/pages/notifications-page/notifications-page';
 
 /**
  * @function Creates a `HTMLElement`from an HTML string.
@@ -19,12 +21,31 @@ export const createTemplate = (html: string) => {
 };
 
 /**
- * @function Renders the page layout and navigation components on each page of the app.
+ * @function Renders the `Layout` component.
  */
 
-export const renderPage = () => {
+export const renderLayout = () => {
   new Layout('app');
+};
+
+/**
+ * @function Renders the `Navigation` and `BottomNavBar` components.
+ */
+
+export const renderNav = () => {
   new Navigation('.layout__nav--desktop');
   new Navigation('.layout__nav--mobile');
   new BottomNavBar();
+};
+
+/**
+ * @function Renders the `SearchPage` component.
+ */
+
+export const renderSearchPage = () => {
+  new SearchPage();
+};
+
+export const renderNotificationsPage = () => {
+  new NotificationsPage();
 };

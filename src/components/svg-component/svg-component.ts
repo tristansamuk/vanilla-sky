@@ -40,7 +40,6 @@ export class SVGComponent {
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.svgEl = templateContent.querySelector('svg') as SVGElement;
-    console.log('this.svgEl', this.svgEl);
     this.pathEl = templateContent.querySelector('path') as SVGPathElement;
 
     this.configureSVGEl(this.svgAttributes);

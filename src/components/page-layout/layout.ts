@@ -19,7 +19,7 @@ export class Layout {
         <div class="layout__nav--mobile"></div>
         <div class="layout__container">
           <div class="layout__nav--desktop"></div>
-          <div class="layout__feed">feed</div>
+          <div class="layout__main"></div>
           <div class="layout__search">search</div>
         </div>
       </div>`);

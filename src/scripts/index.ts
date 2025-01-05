@@ -1,3 +1,17 @@
-import { renderPage } from './utils';
+import {
+  renderLayout,
+  renderNav,
+  renderNotificationsPage,
+  renderSearchPage,
+} from './utils';
 
-renderPage();
+renderLayout();
+renderNav();
+
+// Crude Router
+
+if (window.location.pathname === '/search') {
+  renderSearchPage();
+} else if (window.location.pathname === '/notifications') {
+  renderNotificationsPage();
+}

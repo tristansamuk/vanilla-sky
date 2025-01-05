@@ -18,7 +18,7 @@
   margin: auto;
 }
 
-.layout__feed {
+.layout__main {
   min-height: 100vh;
 }
 
@@ -37,7 +37,7 @@
     border-right: 1px solid var(--border);
   }
 
-  .layout__feed {
+  .layout__main {
     border-right: 1px solid var(--border);
     border-left: 1px solid var(--border);
     width: 600px;

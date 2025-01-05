@@ -19,7 +19,7 @@ export class Navigation {
   private templateEl: HTMLTemplateElement;
 
   private navEl: HTMLElement;
-  private imgEl: HTMLImageElement;
+  // private imgEl: HTMLImageElement;
   private ulEl: HTMLUListElement;
   private listItemEl: HTMLLIElement;
   private anchorEl: HTMLAnchorElement;
@@ -52,10 +52,8 @@ export class Navigation {
 
     const templateContent = document.importNode(this.templateEl.content, true);
 
-    console.log(templateContent.querySelectorAll('nav'));
-
     this.navEl = templateContent.querySelector('nav') as HTMLElement;
-    this.imgEl = templateContent.querySelector('img') as HTMLImageElement;
+    // this.imgEl = templateContent.querySelector('img') as HTMLImageElement;
     this.ulEl = templateContent.querySelector('ul') as HTMLUListElement;
     this.anchorEl = templateContent.querySelector('a') as HTMLAnchorElement;
     this.listItemEl = templateContent.querySelector('li') as HTMLLIElement;
@@ -96,7 +94,7 @@ export class Navigation {
       const link = this.anchorEl.cloneNode(true) as HTMLAnchorElement;
 
       // Set `<a>` href, add class (for attaching SVGs), attach to <li>
-      link.setAttribute('href', `./${key}.html`);
+      link.setAttribute('href', `${key}`);
       link.classList.add(`nav__link--${key}`);
       navListItem.append(link);
 
