@@ -1,4 +1,4 @@
-import { createTemplate } from '../../../scripts/utils';
+import { createTemplate } from '../../scripts/utils';
 import './search-page.css';
 
 export class SearchPage {
@@ -10,7 +10,7 @@ export class SearchPage {
     this.parentEl = document.querySelector('.layout__main') as HTMLDivElement;
 
     this.templateEl = createTemplate(/*html*/ `
-      <p>SearchPage</p>
+      <p>Search Page</p>
       `);
 
     const templateContent = document.importNode(this.templateEl.content, true);

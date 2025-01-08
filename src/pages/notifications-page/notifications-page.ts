@@ -1,4 +1,4 @@
-import { createTemplate } from '../../../scripts/utils';
+import { createTemplate } from '../../scripts/utils';
 import './notification-page.css';
 
 export class NotificationsPage {

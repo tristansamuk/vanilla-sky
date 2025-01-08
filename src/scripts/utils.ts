@@ -1,8 +1,13 @@
 import { BottomNavBar } from '../components/bottom-nav-bar/bottom-nav-bar';
 import { Layout } from '../components/page-layout/layout';
 import { Navigation } from '../components/navigation/navigation';
-import { SearchPage } from '../components/pages/search-page/search-page';
-import { NotificationsPage } from '../components/pages/notifications-page/notifications-page';
+import { ChatPage } from '../pages/chat-page/chat-page';
+import { FeedsPage } from '../pages/feeds-page/feeds-page';
+import { ListsPage } from '../pages/lists-page/lists-page';
+import { NotificationsPage } from '../pages/notifications-page/notifications-page';
+import { ProfilePage } from '../pages/profile-page/profile-page';
+import { SearchPage } from '../pages/search-page/search-page';
+import { SettingsPage } from '../pages/settings-page/settings-page';
 
 /**
  * @function Creates a `HTMLElement`from an HTML string.
@@ -20,17 +25,11 @@ export const createTemplate = (html: string) => {
   return template;
 };
 
-/**
- * @function Renders the `Layout` component.
- */
+// Component Rendering Fucntions
 
 export const renderLayout = () => {
   new Layout('app');
 };
-
-/**
- * @function Renders the `Navigation` and `BottomNavBar` components.
- */
 
 export const renderNav = () => {
   new Navigation('.layout__nav--desktop');
@@ -38,14 +37,32 @@ export const renderNav = () => {
   new BottomNavBar();
 };
 
-/**
- * @function Renders the `SearchPage` component.
- */
+// Page Rendering Functions
+
+export const renderChatPage = () => {
+  new ChatPage();
+};
+
+export const renderFeedsPage = () => {
+  new FeedsPage();
+};
+
+export const renderListsPage = () => {
+  new ListsPage();
+};
+
+export const renderNotificationsPage = () => {
+  new NotificationsPage();
+};
+
+export const renderProfilePage = () => {
+  new ProfilePage();
+};
 
 export const renderSearchPage = () => {
   new SearchPage();
 };
 
-export const renderNotificationsPage = () => {
-  new NotificationsPage();
+export const renderSettingsPage = () => {
+  new SettingsPage();
 };
