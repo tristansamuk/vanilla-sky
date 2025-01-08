@@ -9,7 +9,7 @@ export class ListsPage {
   constructor() {
     this.parentEl = document.querySelector('.layout__main') as HTMLDivElement;
 
-    this.templateEl = createTemplate(/*html*/ `
+    this.templateEl = createTemplate(`
       <p>Chat Page</p>
       `);
 

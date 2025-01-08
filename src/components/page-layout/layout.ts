@@ -14,7 +14,7 @@ export class Layout {
   constructor(parentElId: string) {
     this.parentEl = document.getElementById(parentElId) as HTMLElement;
 
-    this.templateEl = createTemplate(/*html*/ `
+    this.templateEl = createTemplate(`
       <div class="layout">
         <div class="layout__nav--mobile"></div>
         <div class="layout__container">
@@ -22,7 +22,8 @@ export class Layout {
           <div class="layout__main"></div>
           <div class="layout__search">search</div>
         </div>
-      </div>`);
+      </div>
+      `);
 
     const templateContent = document.importNode(this.templateEl.content, true);
 

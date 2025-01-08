@@ -29,7 +29,7 @@ export class Navigation {
   constructor(parentElClass: string) {
     this.parentEl = document.querySelector(parentElClass) as HTMLDivElement;
 
-    this.templateEl = createTemplate(/*html*/ `
+    this.templateEl = createTemplate(`
         <nav class="nav">
           <div class="nav__container--profile-pic">
             <img

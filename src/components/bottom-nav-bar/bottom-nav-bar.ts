@@ -11,24 +11,31 @@ import { createTemplate } from '../../scripts/utils';
 export class BottomNavBar {
   private parentEl: HTMLDivElement;
   private templateEl: HTMLTemplateElement;
+
   private navEl: HTMLElement;
   private ulEl: HTMLUListElement;
   private liEl: HTMLLIElement;
+  private aEl: HTMLAnchorElement;
 
   constructor() {
     this.parentEl = document.getElementById('app') as HTMLDivElement;
-    this.templateEl = createTemplate(/*html*/ `
+
+    this.templateEl = createTemplate(`
       <nav class="bottom-nav-bar">
         <ul class="bottom-nav-bar__list">
-          <li class="bottom-nav-bar__item"></li>
+          <li class="bottom-nav-bar__item">
+            <a></a>
+          </li>
         </ul>
-      </nav>`);
+      </nav>
+      `);
 
     const templateContent = document.importNode(this.templateEl.content, true);
 
     this.navEl = templateContent.querySelector('nav') as HTMLElement;
     this.ulEl = templateContent.querySelector('ul') as HTMLUListElement;
     this.liEl = templateContent.querySelector('li') as HTMLLIElement;
+    this.aEl = templateContent.querySelector('a') as HTMLAnchorElement;
 
     this.render();
     this.attachIcons();
@@ -38,7 +45,7 @@ export class BottomNavBar {
       new SVGComponent(
         value,
         defaultSVGAttributes,
-        `.bottom-nav-bar__icon-container--${key}`
+        `.bottom-nav-bar__link--${key}`
       );
     });
   }
@@ -46,18 +53,19 @@ export class BottomNavBar {
   private render() {
     // Clear contents of <ul>
     this.ulEl.innerHTML = '';
+    this.liEl.innerHTML = '';
 
     Object.entries(bottomNavBarItems).forEach(([key, _value]) => {
-      // Add a class that SVGComponent can use to attach the <svg> icon to the DOM.
-      const iconClass = `bottom-nav-bar__icon-container--${key}`;
-      this.liEl.classList.add(iconClass);
-
-      // Copy the <li> and attach to the <ul>
+      // Copy the <li> and <a> elements
       const navItem = this.liEl.cloneNode(true) as HTMLLIElement;
-      this.ulEl.append(navItem);
+      const link = this.aEl.cloneNode(true) as HTMLAnchorElement;
 
-      // Remove the class from the original element
-      this.liEl.classList.remove(iconClass);
+      // Set `<a>` href, add class (for attaching SVGs), attach to <li>
+      link.setAttribute('href', `${key}`);
+      link.classList.add(`bottom-nav-bar__link--${key}`);
+      navItem.append(link);
+
+      this.ulEl.append(navItem);
     });
 
     // Ensures only one of the component is ever present in the parent element

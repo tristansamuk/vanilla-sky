@@ -9,7 +9,7 @@ export class SearchPage {
   constructor() {
     this.parentEl = document.querySelector('.layout__main') as HTMLDivElement;
 
-    this.templateEl = createTemplate(/*html*/ `
+    this.templateEl = createTemplate(`
       <p>Search Page</p>
       `);
 

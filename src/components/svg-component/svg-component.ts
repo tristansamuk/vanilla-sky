@@ -32,10 +32,11 @@ export class SVGComponent {
     this.svgAttributes = svgParams;
     this.parentEl = document.querySelector(parentClass) as HTMLElement;
 
-    this.templateEl = createTemplate(/*html*/ `
+    this.templateEl = createTemplate(`
       <svg>
         <path></path>
-      </svg>`);
+      </svg>
+      `);
 
     const templateContent = document.importNode(this.templateEl.content, true);
 
