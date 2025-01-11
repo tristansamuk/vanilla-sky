@@ -1,0 +1,154 @@
+/* Mobile */
+
+.nav {
+  /* width? */
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.nav__container--profile-pic {
+  display: none;
+}
+
+/* .nav__profile-pic {
+  display: none;
+} */
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.nav__item {
+  display: flex;
+
+  justify-content: left;
+  align-items: center;
+  height: 48px;
+  font-size: var(--text-lg);
+  border-radius: var(--border-radius-sm);
+  transition: all 100ms;
+}
+
+.nav__item > a {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+}
+
+.nav__item:hover {
+  background-color: var(--hover-light);
+}
+
+.nav__text {
+  display: none;
+}
+
+.nav__container--button {
+  padding-top: var(--spacing-5);
+  padding-left: var(--spacing-3);
+}
+
+.nav__button {
+  display: none;
+}
+
+/* Tablet */
+
+@media (min-width: 800px) {
+  .nav__container--profile-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    margin: var(--spacing-2_5) auto;
+    border: 1px solid grey;
+    border-radius: var(--border-radius-xl);
+  }
+
+  .nav__profile-pic {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--border-radius-xl);
+    object-fit: cover;
+  }
+
+  .nav__item {
+    margin: auto;
+    justify-content: center;
+    height: 64px;
+    width: 64px;
+  }
+
+  .nav__item > a {
+    justify-content: center;
+  }
+
+  .nav__item > svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 1300px) {
+  .nav {
+    width: 15rem;
+    margin-top: var(--spacing-2_5);
+  }
+
+  .nav__container--profile-pic {
+    margin-left: var(--spacing-3);
+    margin-right: 0;
+  }
+
+  .nav__item {
+    width: 100%;
+    height: 48px;
+    justify-content: left;
+    display: flex;
+  }
+
+  .nav__item > a {
+    justify-content: left;
+  }
+
+  .nav__item > svg {
+    width: 28px;
+    height: 24px;
+  }
+
+  .nav__text {
+    display: inline;
+  }
+
+  .nav__button {
+    display: flex;
+    width: 132px;
+    height: 44px;
+    background-color: var(--brand-blue);
+    color: var(--text-light);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2);
+    border: none;
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-3) var(--spacing-5);
+  }
+
+  .nav__button:hover {
+    background-color: var(--hover-blue);
+  }
+
+  .nav__button > svg {
+    height: 16px;
+    width: 16px;
+  }
+}

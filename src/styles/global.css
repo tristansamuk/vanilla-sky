@@ -1,0 +1,81 @@
+@import './variables.css';
+
+/* Copied from official Inter website */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+}
+
+@media (min-width: 800px) {
+  body {
+    padding-left: 0px;
+  }
+}
+
+@media (min-width: 1300px) {
+  body {
+    padding-left: 85px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+button {
+  font-size: var(--text-md);
+  font-family: var(--font-primary);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Parent element for all page content */
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  #app {
+    margin: auto;
+  }
+}
+
+@media (min-width: 1300px) {
+  #app {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+#app {
+  max-width: 1440px;
+  margin: auto;
+}

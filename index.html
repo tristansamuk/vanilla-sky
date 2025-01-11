@@ -2,11 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Sky</title>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="./src/styles/global.css" />
+    <title>Discover — Bluesky</title>
   </head>
-  <script type="module" src="/src/app.ts" defer></script>
+  <script type="module" src="/src/scripts/index.ts" defer></script>
+
+  <template id="profile-header-template">
+    <div class="profile-header">
+      <img
+        class="profile-header__pic"
+        src="./src/assets/images/profile-pic-riker.jpg"
+      />
+      <div class="profile-header__container--mobile-only-info">
+        <div>
+          <p class="profile-header__text--large">tristan</p>
+          <p class="profile-header__text">@tsamuk.bsky.social</p>
+        </div>
+        <div class="profile-header__cointainer--follows">
+          <p class="profile-header__text">
+            <span class="profile-header__text--bold">14</span> followers
+          </p>
+
+          <p class="profile-header__text">·</p>
+          <p class="profile-header__text">
+            <span class="profile-header__text--bold">100</span>
+            following
+          </p>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <body>
     <div id="app"></div>
   </body>
