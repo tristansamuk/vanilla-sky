@@ -94,7 +94,12 @@ export class Navigation {
       const link = this.anchorEl.cloneNode(true) as HTMLAnchorElement;
 
       // Set `<a>` href, add class (for attaching SVGs), attach to <li>
-      link.setAttribute('href', `${key}`);
+      if (key === 'home') {
+        link.setAttribute('href', '/');
+      } else {
+        link.setAttribute('href', `${key}`);
+      }
+
       link.classList.add(`nav__link--${key}`);
       navListItem.append(link);
 

@@ -61,7 +61,11 @@ export class BottomNavBar {
       const link = this.aEl.cloneNode(true) as HTMLAnchorElement;
 
       // Set `<a>` href, add class (for attaching SVGs), attach to <li>
-      link.setAttribute('href', `${key}`);
+      if (key === 'home') {
+        link.setAttribute('href', '/');
+      } else {
+        link.setAttribute('href', `${key}`);
+      }
       link.classList.add(`bottom-nav-bar__link--${key}`);
       navItem.append(link);
 
