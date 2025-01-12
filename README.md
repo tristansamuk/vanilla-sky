@@ -1,13 +1,12 @@
-
 # 🍦 Vanillasky
 
 Vanillasky is a clone of the social media app [Bluesky](https://bsky.app/).
 
 It’s a single-page application built with TypeScript, CSS, and HTML. Aside from Vite, no third-party software, frameworks, or libraries were used in this project.
 
-Currently, the project is frontend-only, so posts and other user data don’t persist between sessions. However, I plan to implement a backend using Node and a similar vanilla TypeScript approach.
+Vanillasky is frontend-only for the moment, so posts and other user data don’t persist between sessions. I plan to implement a backend soon using Node and a similar vanilla TypeScript approach.
 
-While I appreciate AI tools, none of the code in this repository is AI-generated. I used ChatGPT solely for code review, debugging, and proofreading documentation.
+None of the code in this repository is AI-generated. I used ChatGPT solely for code review, debugging, and proofreading documentation.
 
 ## 📌 Project Status
 
@@ -48,8 +47,6 @@ While I appreciate AI tools, none of the code in this repository is AI-generated
 - Backend for persistent data
 
 ## 📁 Project Overview
-
-The project is organized to maintain a clear separation of concerns, with styles, components, and types in distinct folders.
 
 ### 🤔 Creating a Single-Page Application without a Framework
 
