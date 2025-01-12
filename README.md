@@ -11,6 +11,7 @@ None of the code in this repository is AI-generated. I used ChatGPT solely for c
 ## 📌 Project Status
 
 **In Development**: This project is currently a work in progress. I'm actively implementing additional features and improvements.
+
 **Estimated completion**: Spring 2025.
 
 ## 🎯 Goals
@@ -54,25 +55,23 @@ Reproducing the single-page application approach used by most modern frameworks 
 
 - Routing, state, etc.
 
-### 🧩 Components
+### 🧩 Approach to Components
 
-Although I drew inspiration from React, I opted for an object-oriented rather than functional approach to buidling components.
+Although I drew inspiration from React, I opted for an object-oriented, rather than functional, approach to buidling components.
 
-### 💅 Styles
+Some of the reasons for this decision:
 
-- Global styles and variables are centralized in the `src/styles` folder and imported into `index.html`.
-- Component-specific styles are scoped locally within their component folders.
+- Structuring components as classes helps keep their state and behavior organized and self-contained.
+- OOP allowed me to take advantage of modern JavaScript features like ES6 classes, encapsulation, and inheritance, as well as TypeScript’s support for class properties and methods.
+- Part of the goal of this project was to capture some of the feel of pre-framework web development. Class-based components build on the object-oriented patterns developers sometimes used with constructor functions and prototypes.
 
-```
-src/
-├── styles/
-│   ├── variables.css
-│   ├── global.css
-├── components/
-│   ├── Button/
-│   │   ├── Button.css
-│   │   ├── Button.ts
-```
+Most importantly, I wanted to deepen my understanding of core web development concepts like state management, event handling, and DOM updates. Using OOP let me explore these concepts without relying on framework-specific abstractions.
+
+### 💅 CSS vs Sass
+
+I considered using Sass for its mixins, nested rules, and variables, but modern CSS now includes many of these features natively.
+
+Choosing plain CSS kept the project lightweight and aligned with my goal of staying as close as possible to “vanilla” web development.
 
 ### 🔒 Constants
 
