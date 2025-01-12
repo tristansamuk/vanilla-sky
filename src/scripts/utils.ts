@@ -9,6 +9,7 @@ import { ProfilePage } from '../pages/profile-page/profile-page';
 import { SearchPage } from '../pages/search-page/search-page';
 import { SettingsPage } from '../pages/settings-page/settings-page';
 import { TopBarHome } from '../components/top-bar/top-bar-home';
+import { HomePage } from '../pages/home-page/home-page';
 
 /**
  * @function Creates a `HTMLElement`from an HTML string.
@@ -41,6 +42,7 @@ export const renderNav = () => {
 // Page Rendering Functions
 
 export const renderHomePage = () => {
+  new HomePage();
   new TopBarHome();
 };
 
