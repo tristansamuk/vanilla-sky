@@ -18,10 +18,11 @@ export class TopBarHome {
     this.templateEl = createTemplate(`
       <div class="top-bar-home">
         <div class="top-bar-home__container--top">
-          </button>
-          <div class="top-bar-home__container--svg">
-          </div>
           <button class="top-bar-home__button--menu">
+          </button>
+          <div class="top-bar-home__container--logo">
+          </div>
+          <button class="top-bar-home__button--feeds">
           </button>
         </div>
         <div class="top-bar-home__container--bottom">

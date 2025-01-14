@@ -85,7 +85,46 @@ export const defaultPathAttributes: PathAttributes = {
   d: '',
 };
 
+// Butterfly Logo
+
+export const butterflySVG: SVGAttributes = {
+  ...defaultSVGAttributes,
+  viewBox: '0 0 64 57',
+  width: '30',
+  style: 'width: 30px; height: 26.7188px;',
+};
+
+export const butterflyPath: PathAttributes = {
+  ...defaultPathAttributes,
+  fill: '#0085ff',
+  d: 'M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z',
+};
+
 // Buttons
+
+export const hamburgerMenuSVG: SVGAttributes = {
+  ...defaultSVGAttributes,
+  width: '24',
+  height: '24',
+  style: 'color: rgb(84, 110, 138)',
+};
+
+export const hamburgerMenuPath: PathAttributes = {
+  ...defaultPathAttributes,
+  fill: 'hsl(211, 24%, 43.6%)',
+  d: 'M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Z',
+};
+
+export const hashtagSVG: SVGAttributes = {
+  ...defaultSVGAttributes,
+  style: 'color: rgb(84, 110, 138); pointer-events: none;',
+};
+
+export const hashtagPath: PathAttributes = {
+  ...defaultPathAttributes,
+  fill: 'hsl(211, 24%, 43.6%)',
+  d: 'M9.124 3.008a1 1 0 0 1 .868 1.116L9.632 7h5.985l.39-3.124a1 1 0 0 1 1.985.248L17.632 7H20a1 1 0 1 1 0 2h-2.617l-.75 6H20a1 1 0 1 1 0 2h-3.617l-.39 3.124a1 1 0 1 1-1.985-.248l.36-2.876H8.382l-.39 3.124a1 1 0 1 1-1.985-.248L6.368 17H4a1 1 0 1 1 0-2h2.617l.75-6H4a1 1 0 1 1 0-2h3.617l.39-3.124a1 1 0 0 1 1.117-.868ZM9.383 9l-.75 6h5.984l.75-6H9.383Z',
+};
 
 export const newPostSVG: SVGAttributes = {
   ...defaultSVGAttributes,
