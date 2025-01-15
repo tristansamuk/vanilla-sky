@@ -1,4 +1,5 @@
 import './top-bar-home.css';
+import { topBarIcons } from '../../constants/svgs';
 import { createTemplate } from '../../scripts/utils';
 import { SVGComponent } from '../svg-component/svg-component';
 
@@ -40,7 +41,27 @@ export class TopBarHome {
     ) as HTMLDivElement;
 
     this.render();
+    this.attachSVGs();
   }
+  private attachSVGs() {
+    const {
+      butterfly,
+      butterflySVG,
+      hamburgerMenu,
+      hamburgerMenuSVG,
+      hashtag,
+      hashtagSVG,
+    } = topBarIcons;
+
+    new SVGComponent(
+      hamburgerMenu,
+      hamburgerMenuSVG,
+      '.top-bar-home__button--menu'
+    );
+    new SVGComponent(butterfly, butterflySVG, '.top-bar-home__container--logo');
+    new SVGComponent(hashtag, hashtagSVG, '.top-bar-home__button--feeds');
+  }
+
   private render() {
     this.parentEl.insertAdjacentElement('afterbegin', this.component);
   }

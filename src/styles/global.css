@@ -45,6 +45,8 @@ a {
 button {
   font-size: var(--text-md);
   font-family: var(--font-primary);
+  background-color: transparent;
+  border: none;
 }
 
 ul {
