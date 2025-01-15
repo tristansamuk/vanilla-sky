@@ -4,23 +4,24 @@ import './lists-page.css';
 export class ListsPage {
   private parentEl: HTMLDivElement;
   private templateEl: HTMLTemplateElement;
-  private parEl: HTMLParagraphElement;
+  private page: DocumentFragment;
 
   constructor() {
     this.parentEl = document.querySelector('.layout__main') as HTMLDivElement;
 
     this.templateEl = createTemplate(`
-      <p>Chat Page</p>
+      <div class="lists">
+        <p>Lists Page</p>
+      </div>
       `);
 
-    const templateContent = document.importNode(this.templateEl.content, true);
-    this.parEl = templateContent.querySelector('p') as HTMLParagraphElement;
+    this.page = document.importNode(this.templateEl.content, true);
 
     this.render();
   }
 
-  render() {
+  private render() {
     this.parentEl.innerHTML = '';
-    this.parentEl.append(this.parEl);
+    this.parentEl.append(this.page);
   }
 }

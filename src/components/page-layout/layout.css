@@ -13,12 +13,13 @@
 }
 
 .layout__container {
-  width: fit-content;
+  width: 100%;
   display: flex;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .layout__main {
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -27,6 +28,11 @@
 }
 
 @media (min-width: 800px) {
+  .layout__container {
+    width: fit-content;
+    margin: auto;
+  }
+
   .layout__nav--mobile {
     position: fixed;
     left: 0px;

@@ -1,0 +1,60 @@
+/* Mobile / Default */
+
+.top-bar-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 95px;
+  border-bottom: 1px solid var(--border);
+}
+
+.top-bar-home__container--top {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-1) var(--spacing-4);
+}
+
+.top-bar-home__button--menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 32px;
+}
+
+.top-bar-home__container--logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar-home__button--feeds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 32px;
+}
+
+.top-bar-home__container--bottom {
+  display: flex;
+}
+
+.top-bar-home__feed-name {
+  color: var(--text-primary);
+}
+
+.top-bar-home__feed-name--inactive {
+}
+
+/* Tablet */
+
+@media (min-width: 800px) {
+  .top-bar-home {
+    height: 93px;
+  }
+
+  .top-bar-home__burger-menu {
+    display: none;
+  }
+}

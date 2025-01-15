@@ -1,6 +1,7 @@
 import {
   renderChatPage,
   renderFeedsPage,
+  renderHomePage,
   renderLayout,
   renderListsPage,
   renderNav,
@@ -12,10 +13,14 @@ import {
 
 renderLayout();
 renderNav();
+console.log(window.location.pathname);
 
 // Temporary Router
 
 switch (window.location.pathname) {
+  case '/':
+    renderHomePage();
+    break;
   case '/chat':
     renderChatPage();
     break;

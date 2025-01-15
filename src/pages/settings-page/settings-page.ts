@@ -4,7 +4,7 @@ import './settings-page.css';
 export class SettingsPage {
   private parentEl: HTMLDivElement;
   private templateEl: HTMLTemplateElement;
-  private parEl: HTMLParagraphElement;
+  private page: DocumentFragment;
 
   constructor() {
     this.parentEl = document.querySelector('.layout__main') as HTMLDivElement;
@@ -13,14 +13,13 @@ export class SettingsPage {
       <p>Settings Page</p>
       `);
 
-    const templateContent = document.importNode(this.templateEl.content, true);
-    this.parEl = templateContent.querySelector('p') as HTMLParagraphElement;
+    this.page = document.importNode(this.templateEl.content, true);
 
     this.render();
   }
 
-  render() {
+  private render() {
     this.parentEl.innerHTML = '';
-    this.parentEl.append(this.parEl);
+    this.parentEl.append(this.page);
   }
 }
