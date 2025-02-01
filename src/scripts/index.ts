@@ -13,7 +13,6 @@ import {
 
 renderLayout();
 renderNav();
-console.log(window.location.pathname);
 
 // Temporary Router
 
