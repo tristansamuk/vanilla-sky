@@ -1,7 +1,7 @@
 import { createTemplate } from '../../scripts/utils';
-import './feeds-pages.css';
+import './home-page.css';
 
-export class FeedsPage {
+export class HomePage {
   private parentEl: HTMLDivElement;
   private templateEl: HTMLTemplateElement;
   private page: DocumentFragment;
@@ -10,9 +10,9 @@ export class FeedsPage {
     this.parentEl = document.querySelector('.layout__main') as HTMLDivElement;
 
     this.templateEl = createTemplate(`
-      <div class="feeds">
-        <p>Feeds Page</p>
-      <div>
+      <div class="home">
+        <p>Home Page</p>
+      </div>
       `);
 
     this.page = document.importNode(this.templateEl.content, true);

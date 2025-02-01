@@ -4,23 +4,25 @@ import './profile-page.css';
 export class ProfilePage {
   private parentEl: HTMLDivElement;
   private templateEl: HTMLTemplateElement;
-  private parEl: HTMLParagraphElement;
+  private page: HTMLDivElement;
 
   constructor() {
     this.parentEl = document.querySelector('.layout__main') as HTMLDivElement;
 
     this.templateEl = createTemplate(`
-      <p>Profile Page</p>
+      <div class="profile">
+        <p>Profile Page</p>
+      </div>
       `);
 
     const templateContent = document.importNode(this.templateEl.content, true);
-    this.parEl = templateContent.querySelector('p') as HTMLParagraphElement;
+    this.page = templateContent.querySelector('.profile') as HTMLDivElement;
 
     this.render();
   }
 
   render() {
     this.parentEl.innerHTML = '';
-    this.parentEl.append(this.parEl);
+    this.parentEl.append(this.page);
   }
 }

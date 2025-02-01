@@ -9,7 +9,7 @@ import { createTemplate } from '../../scripts/utils';
 
 /**
  * @class A reusable SVG component.
- * @param {string} pathParams - The string used in the `d` attribute of the `<path>` element to draw the image
+ * @param {string} pathParams - The attributes object to apply to the `<path>` element
  * @param {SVGAttributes} svgParams - The attributes object to be applied to `<svg>` element
  * @param {string} parentEl - The css selector of the element that will hold the `<svg>` element
  */
