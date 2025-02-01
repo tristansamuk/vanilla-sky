@@ -1,6 +1,7 @@
 import './top-bar-home.css';
-import { topBarIcons } from '../../constants/svgs';
 import { createTemplate } from '../../scripts/utils';
+import { toggleVisibility } from '../../scripts/utils';
+import { topBarIcons } from '../../constants/svgs';
 import { SVGComponent } from '../svg-component/svg-component';
 
 /**
@@ -11,6 +12,7 @@ import { SVGComponent } from '../svg-component/svg-component';
 export class TopBarHome {
   private parentEl: HTMLElement;
   private templateEl: HTMLTemplateElement;
+  private menuButtonEl: HTMLButtonElement;
   private component: HTMLDivElement;
 
   constructor() {
@@ -40,8 +42,15 @@ export class TopBarHome {
       '.top-bar-home'
     ) as HTMLDivElement;
 
+    this.menuButtonEl = this.component.querySelector(
+      '.top-bar-home__button--menu'
+    ) as HTMLButtonElement;
+
     this.render();
     this.attachSVGs();
+    this.menuButtonEl.addEventListener('click', () =>
+      toggleVisibility('.layout__nav--mobile', 'flex')
+    );
   }
   private attachSVGs() {
     const {

@@ -18,8 +18,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 44px;
-  width: 32px;
+  height: 34px;
+  width: 34px;
+  border-radius: var(--border-radius-sm);
+}
+
+.top-bar-home__button--menu:hover {
+  background-color: var(--hover-light);
 }
 
 .top-bar-home__container--logo {
@@ -52,9 +57,5 @@
 @media (min-width: 800px) {
   .top-bar-home {
     height: 93px;
-  }
-
-  .top-bar-home__burger-menu {
-    display: none;
   }
 }

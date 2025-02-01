@@ -27,6 +27,33 @@ export const createTemplate = (html: string) => {
   return template;
 };
 
+/**
+ * Toggles the visibility of the first element matching the given class name.
+ * If the element is currently visible, it sets `display: none`.
+ * If the element is hidden (`display: none`), it sets `display` to `newDisplayValue`.
+ *
+ * @param {string} className - The class selector of the element.
+ * @param {CSSStyleDeclaration['display']} newDisplayValue - The display value to set when making the element visible.
+ * @throws {Error} If no element matching the class name is found.
+ */
+
+export const toggleVisibility = (
+  className: string,
+  newDisplayValue: CSSStyleDeclaration['display']
+) => {
+  const element = document.querySelector(className) as HTMLElement;
+
+  if (!element) {
+    throw new Error(`HTML element with class name "${className}" not found.`);
+  }
+
+  if (getComputedStyle(element).display !== 'none') {
+    element.style.display = 'none';
+  } else {
+    element.style.display = newDisplayValue;
+  }
+};
+
 // Component Rendering Fucntions
 
 export const renderLayout = () => {
