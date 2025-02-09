@@ -1,10 +1,10 @@
 /* Mobile */
 
 .nav {
-  /* width? */
   display: flex;
   flex-direction: column;
   justify-content: left;
+  background-color: var(--background-primary);
 }
 
 .nav__container--profile-pic {

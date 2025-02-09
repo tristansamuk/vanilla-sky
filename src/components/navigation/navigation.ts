@@ -114,6 +114,8 @@ export class Navigation {
     });
 
     // Ensures only one of the component is ever present in the parent element
-    !this.parentEl.contains(this.navEl) && this.parentEl.append(this.navEl);
+    // !this.parentEl.contains(this.navEl) && this.parentEl.append(this.navEl);
+    !this.parentEl.contains(this.navEl) &&
+      this.parentEl.insertAdjacentElement('afterbegin', this.navEl);
   }
 }

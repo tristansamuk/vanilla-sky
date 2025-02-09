@@ -6,6 +6,18 @@
 
 .layout__nav--mobile {
   display: none;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.layout__mobile-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
 }
 
 .layout__nav--desktop {

@@ -49,13 +49,17 @@
   color: var(--text-primary);
 }
 
-.top-bar-home__feed-name--inactive {
-}
+/* .top-bar-home__feed-name--inactive {
+} */
 
 /* Tablet */
 
 @media (min-width: 800px) {
   .top-bar-home {
     height: 93px;
+  }
+
+  .top-bar-home__button--menu {
+    display: none;
   }
 }

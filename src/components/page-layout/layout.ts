@@ -1,4 +1,4 @@
-import { createTemplate } from '../../scripts/utils';
+import { createTemplate, toggleVisibility } from '../../scripts/utils';
 import './layout.css';
 
 /**
@@ -9,14 +9,17 @@ import './layout.css';
 export class Layout {
   private parentEl: HTMLElement;
   private templateEl: HTMLTemplateElement;
-  private pageLayout: HTMLDivElement;
+  private component: HTMLDivElement;
+  private overlay: HTMLDivElement;
 
   constructor(parentElId: string) {
     this.parentEl = document.getElementById(parentElId) as HTMLElement;
 
     this.templateEl = createTemplate(`
       <div class="layout">
-        <div class="layout__nav--mobile"></div>
+        <div class="layout__nav--mobile">
+          <div class="layout__mobile-overlay"></div>
+        </div>
         <div class="layout__container">
           <div class="layout__nav--desktop"></div>
           <div class="layout__main"></div>
@@ -27,14 +30,18 @@ export class Layout {
 
     const templateContent = document.importNode(this.templateEl.content, true);
 
-    this.pageLayout = templateContent.querySelector(
-      '.layout'
+    this.component = templateContent.querySelector('.layout') as HTMLDivElement;
+    this.overlay = this.component.querySelector(
+      '.layout__mobile-overlay'
     ) as HTMLDivElement;
 
     this.render();
+    this.overlay.addEventListener('click', () =>
+      toggleVisibility('.layout__nav--mobile', 'none')
+    );
   }
 
   private render() {
-    this.parentEl.append(this.pageLayout);
+    this.parentEl.append(this.component);
   }
 }
