@@ -1,15 +1,15 @@
 import { BottomNavBar } from '../components/bottom-nav-bar/bottom-nav-bar';
-import { Layout } from '../components/page-layout/layout';
-import { Navigation } from '../components/navigation/navigation';
 import { ChatPage } from '../pages/chat-page/chat-page';
 import { FeedsPage } from '../pages/feeds-page/feeds-page';
+import { HomePage } from '../pages/home-page/home-page';
+import { Layout } from '../components/page-layout/layout';
 import { ListsPage } from '../pages/lists-page/lists-page';
+import { Navigation } from '../components/navigation/navigation';
 import { NotificationsPage } from '../pages/notifications-page/notifications-page';
 import { ProfilePage } from '../pages/profile-page/profile-page';
 import { SearchPage } from '../pages/search-page/search-page';
 import { SettingsPage } from '../pages/settings-page/settings-page';
 import { TopBarHome } from '../components/top-bar/top-bar-home';
-import { HomePage } from '../pages/home-page/home-page';
 
 /**
  * @function Creates a `HTMLElement`from an HTML string.

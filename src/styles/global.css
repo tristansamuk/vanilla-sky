@@ -81,3 +81,9 @@ ul {
   max-width: 1440px;
   margin: auto;
 }
+
+/* Utility Classes */
+
+.visible {
+  display: flex;
+}
