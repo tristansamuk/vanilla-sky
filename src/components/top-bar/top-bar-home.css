@@ -10,7 +10,8 @@
 
 .top-bar-home__container--top {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: var(--spacing-2);
   padding: var(--spacing-1) var(--spacing-4);
 }
 
@@ -31,6 +32,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width: calc(100% - 64px); */
+  width: calc(100% - 80px);
 }
 
 .top-bar-home__button--feeds {
@@ -57,6 +60,10 @@
 @media (min-width: 800px) {
   .top-bar-home {
     height: 93px;
+  }
+
+  .top-bar-home__container--top {
+    justify-content: flex-end;
   }
 
   .top-bar-home__button--menu {
